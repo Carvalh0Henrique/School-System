@@ -1,0 +1,58 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "José Maria",
+      "course": "Computação"
+    },
+    {
+      "id": 2,
+      "name": "Beatriz",
+      "course": "Farmácia"
+    }
+  ],
+  "courses": [
+    {
+      "id": 1,
+      "name": "Análise e Desenvolvimento de Sistemas",
+      "price": "5000",
+      "active": true,
+      "promotion": false
+    },
+    {
+      "id": 2,
+      "name": "Administração",
+      "price": "",
+      "active": "",
+      "promotion": ""
+    },
+    {
+      "id": 3,
+      "name": "Farmácia",
+      "price": "",
+      "active": "",
+      "promotion": ""
+    },
+    {
+      "id": 4,
+      "name": "Engenharia",
+      "price": "",
+      "active": "",
+      "promotion": ""
+    },
+    {
+      "id": 5,
+      "name": "Medicina",
+      "price": "",
+      "active": false,
+      "promotion": false
+    },
+    {
+      "id": 6,
+      "name": "Direito",
+      "price": "3000",
+      "active": false,
+      "promotion": false
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+<div class="container bg-light p-4">
+    <div class="row">
+        <div class="col-7 m-auto">
+            <h1 class="text-center">Cadastro do Curso</h1>
+            <form [formGroup]="formGroupCourse">
+                <div class="mb-3">
+                    <label for="inputName" class="form-label">Curso</label>
+                    <input formControlName="name" type="text" class="form-control" id="inputName" aria-describedby="nameHelp">
+                    <div id="nameHelp" class="form-text">Digite o nome do seu curso</div>
+                </div>
+                <div class="mb-3">
+                    <label for="inputCourse" class="form-label">Preço</label>
+                    <input formControlName="price" type="text" class="form-control" id="inputCourse" aria-describedby="courseHelp">
+                    <div id="courseHelp" class="form-text">Digite a mensalidade do seu curso</div>
+                </div>
+
+                <div class="row align-items-start">
+                    <div class="col">
+                        <label for="inputName" class="form-label">Ativo?</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault1" [value]="true">
+                            <label class="form-check-label" for="radioDefault1">
+                                Sim
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault2" [value]="false" checked>
+                            <label class="form-check-label" for="radioDefault2">
+                                Não
+                            </label>
+                        </div>    
+                    </div>
+                
+                    <div class="col">
+                        <label for="inputName" class="form-label">Promoção</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                            <label class="form-check-label" for="checkDefault">
+                              1° Opção
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="checkChecked" checked>
+                            <label class="form-check-label" for="checkChecked">
+                              2° Opção
+                            </label>
+                        </div>    
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary mt-3" (click)="save()">Salvar</button>
+
+            </form>
+
+            <h2 class="text-center">Alunos Cadastrados</h2>
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Preço</th>
+                    <th scope="col">Ativo?</th>
+                    <th scope="col">Promoção?</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let n of courses">
+                    <th scope="row">{{n.id}}</th>
+                    <td>{{n.name}}</td>
+                    <td>{{n.price}}</td>
+                    <td>{{n.active}}</td>
+                    <td>{{n.promotion}}</td>
+                  </tr>
+                </tbody>
+              </table>
+
+        </div>
+    </div>
+</div>
