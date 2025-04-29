@@ -13,7 +13,17 @@
                     <input formControlName="course" type="text" class="form-control" id="inputCourse" aria-describedby="courseHelp">
                     <div id="courseHelp" class="form-text">Digite o nome do curso</div>
                 </div>
-                <button type="submit" class="btn btn-primary" (click)="save()">Salvar</button>
+                <button *ngIf="!isEditing" class="btn btn-primary" (click)="save()">
+                  Salvar
+                </button>
+
+                <button *ngIf="isEditing" class="btn btn-primary" (click)="update()">
+                  Atualizar
+                </button>
+
+                <button *ngIf="isEditing" class="btn btn-danger ms-2" (click)="clear()">
+                  Cancelar
+                </button>
             </form>
 
             <h2 class="text-center">Alunos Cadastrados</h2>
@@ -23,6 +33,8 @@
                     <th scope="col">Id</th>
                     <th scope="col">Nome</th>
                     <th scope="col">Curso</th>
+                    <th scope="col">Remover</th>
+                    <th scope="col">Alterar</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -30,6 +42,16 @@
                     <th scope="row">{{n.id}}</th>
                     <td>{{n.name}}</td>
                     <td>{{n.course}}</td>
+                    <td><button class="btn btn-danger"
+                                (click)="delete(n)">
+                                Remover
+                        </button>
+                  </td>
+                  <td><button class="btn btn-warning"
+                            (click)="onClickUpdate(n)">
+                            Alterar
+                      </button>
+                  </td>
                   </tr>
                 </tbody>
               </table>
